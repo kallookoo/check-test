@@ -1,0 +1,15 @@
+{
+	"require": {
+		"kallookoo/wp_plugin_check_admin_referer": "*"
+	},
+	"scripts": {
+		"clean-install": [
+			"mkdir -p admin/functions",
+			"mv 'vendor/kallookoo/wp_plugin_check_admin_referer/src/wp-plugin-check-admin-referer.php' 'admin/functions/wp-plugin-check-admin-referer.php'",
+			"rm -rf vendor",
+			"rm -rf composer.lock"
+		],
+		"post-install-cmd": "@clean-install",
+		"post-update-cmd": "@clean-install"
+	}
+}
